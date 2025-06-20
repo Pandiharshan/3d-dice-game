@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Indie Flower', cursive;
+  background: linear-gradient(270deg, #fdfbfb, #FFDEE9, #B5FFFC, #ebedee, #fdfbfb);
+  background-size: 1000% 1000%;
+  animation: gradientBG 20s ease infinite;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 5vw;
+  color: #FF5E78;
+  text-shadow: 2px 2px #ffc4d6;
+}
+
+.dice-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin: 30px 0;
+}
+
+.dice-wrapper {
+  perspective: 1000px;
+  width: 150px;
+  height: 150px;
+}
+
+.cube {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 1s ease-in-out;
+}
+
+.face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: white;
+  border: 2px solid #333;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 150px;
+  color: #333;
+  backface-visibility: hidden;
+}
+
+.front  { transform: translateZ(75px); }
+.back   { transform: rotateY(180deg) translateZ(75px); }
+.right  { transform: rotateY(90deg) translateZ(75px); }
+.left   { transform: rotateY(-90deg) translateZ(75px); }
+.top    { transform: rotateX(90deg) translateZ(75px); }
+.bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+.button-area {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 1em 2em;
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #FF5E78, #FF8E53);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 94, 120, 0.4);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #FF8E53, #FF5E78);
+  box-shadow: 0 8px 25px rgba(255, 94, 120, 0.6);
+  transform: scale(1.1);
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #777;
+}
